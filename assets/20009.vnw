@@ -1,0 +1,42 @@
+{
+    "CardType": "magic",
+    "ID": 20009,
+    "Name": "Ž©”šƒVƒXƒeƒ€",
+    "COST": 1,
+    "Range": "0000000000002000000001110",
+    "Effect": [
+        {
+            "scope": "range",
+            "execute": "immediate",
+            "process": [
+                {
+                    "do": "check",
+                    "param": "CardType",
+                    "val": "monster",
+                    "trueNext": "1",
+                    "falseNext": "-1"
+                },
+                {
+                    "do": "alterValue",
+                    "param": "hp",
+                    "val": "-4",
+                    "next": "-1"
+                }
+            ]
+        },
+        {
+            "scope": "player",
+            "execute": "immediate",
+            "process": [
+                {
+                    "do": "alterValue",
+                    "target": "me",
+                    "param": "life",
+                    "val": "-2",
+                    "next": "-1"
+                }
+            ]
+        }
+    ],
+    "FT": ""
+}

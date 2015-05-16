@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="proj.vipdecardgame"
+    android:versionCode="21"
+    android:versionName="0.2.7" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="VIPNextWars"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="VIPNextWars" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="LobbyActivity" />
+        <activity
+            android:name="OnlineBattleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ObserveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="DeckManageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="SoloBattleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="TutorialListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="YaruoActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="BlankActivity" />
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+</manifest>

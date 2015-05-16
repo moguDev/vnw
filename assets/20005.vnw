@@ -1,0 +1,29 @@
+{
+    "CardType": "magic",
+    "ID": 20005,
+    "Name": "こくまろザーミルク",
+    "COST": 0,
+    "Range": "0000000100012100010000000",
+    "Effect": [
+        {
+            "scope": "range",
+            "execute": "immediate",
+            "process": [
+                {
+                    "do": "check",
+                    "param": "CardType",
+                    "val": "monster",
+                    "trueNext": "1",
+                    "falseNext": "-1"
+                },
+                {
+                    "do": "alterValue",
+                    "param": "hp",
+                    "val": "2",
+                    "next": "-1"
+                }
+            ]
+        }
+    ],
+    "FT": ""
+}

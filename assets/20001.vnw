@@ -1,0 +1,29 @@
+{
+    "CardType": "magic",
+    "ID": 20001,
+    "Name": "ショックスタンプ",
+    "COST": 1,
+    "Range": "0010001110112110111000100",
+    "Effect": [
+        {
+            "scope": "range",
+            "execute": "immediate",
+            "process": [
+                {
+                    "do": "check",
+                    "param": "CardType",
+                    "val": "monster",
+                    "trueNext": "1",
+                    "falseNext": "-1"
+                },
+                {
+                    "do": "alterValue",
+                    "param": "hp",
+                    "val": "-2",
+                    "next": "-1"
+                }
+            ]
+        }
+    ],
+    "FT": ""
+}

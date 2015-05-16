@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="proj.vipdecardgame.MainActivity" >
+
+    <item
+        android:id="@+id/action_chat"
+        android:orderInCategory="100"
+        android:title="チャット"
+        android:showAsAction="always|withText"/>
+    
+    <item
+        android:id="@+id/action_surrender"
+        android:orderInCategory="100"
+        android:title="降参"
+        android:showAsAction="withText"/>
+
+</menu>

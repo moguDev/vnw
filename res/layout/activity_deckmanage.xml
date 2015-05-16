@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/deck_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:gravity="right"
+        android:padding="10dp"
+        android:text="20枚"
+        android:textColor="#ffffff"
+        android:textSize="15sp" />
+
+    <GridView
+        android:id="@+id/card_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:numColumns="5"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSearchClick"
+        android:padding="10dp"
+        android:text="検索"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onResetClick"
+            android:padding="10dp"
+            android:text="デッキを空にする"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/refine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:onClick="onRefineClick"
+            android:padding="10dp"
+            android:text="絞り込み"
+            android:textSize="15sp" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:onClick="onSortClick"
+            android:padding="10dp"
+            android:text="並び替え"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

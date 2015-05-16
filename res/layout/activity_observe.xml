@@ -1,0 +1,654 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="2dp"
+    tools:context="proj.vipdecardgame.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/current_time"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:textColor="#0000ff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#aaaaff"
+            android:padding="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#33aaaaaa" >
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:padding="5dp"
+                android:textColor="#000000"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#aaaaff"
+            android:padding="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/p2_hand_num"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/p2_deck"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="デッキ: 20"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/p2_grave"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onGraveClick"
+                android:text="墓地: 0"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/p2_life"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="ライフ : 10"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/p2_cost"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="コスト : 10"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/board"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#555555" />
+
+            <LinearLayout
+                android:id="@+id/back_line2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#55ffcccc" >
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_a1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <LinearLayout
+                    android:id="@+id/critical_position2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="#55ffcccc" >
+
+                    <ImageView
+                        android:id="@+id/field_b1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@xml/cell"
+                        android:clickable="true"
+                        android:onClick="onFieldClick"
+                        android:padding="5dp" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="#555555" />
+
+                    <ImageView
+                        android:id="@+id/field_c1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@xml/cell"
+                        android:clickable="true"
+                        android:onClick="onFieldClick"
+                        android:padding="5dp" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="#555555" />
+
+                    <ImageView
+                        android:id="@+id/field_d1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@xml/cell"
+                        android:clickable="true"
+                        android:onClick="onFieldClick"
+                        android:padding="5dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_e1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#555555" />
+
+            <LinearLayout
+                android:id="@+id/front_line2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#33ffcccc" >
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_a2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_b2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_c2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_d2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_e2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#555555" />
+
+            <LinearLayout
+                android:id="@+id/center_line"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#22ffccff" >
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_a3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_b3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_c3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_d3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_e3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#555555" />
+
+            <LinearLayout
+                android:id="@+id/front_line1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#33ccccff" >
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_a4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_b4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_c4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_d4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_e4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#555555" />
+
+            <LinearLayout
+                android:id="@+id/back_line1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#55ccccff" >
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_a5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <LinearLayout
+                    android:id="@+id/critical_position1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="#55ccccff" >
+
+                    <ImageView
+                        android:id="@+id/field_b5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@xml/cell"
+                        android:clickable="true"
+                        android:onClick="onFieldClick"
+                        android:padding="5dp" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="#555555" />
+
+                    <ImageView
+                        android:id="@+id/field_c5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@xml/cell"
+                        android:clickable="true"
+                        android:onClick="onFieldClick"
+                        android:padding="5dp" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="#555555" />
+
+                    <ImageView
+                        android:id="@+id/field_d5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@xml/cell"
+                        android:clickable="true"
+                        android:onClick="onFieldClick"
+                        android:padding="5dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+
+                <ImageView
+                    android:id="@+id/field_e5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@xml/cell"
+                    android:clickable="true"
+                    android:onClick="onFieldClick"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#555555" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#555555" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/p1_hand_num"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/p1_deck"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="デッキ: 20"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/p1_grave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onGraveClick"
+                android:text="墓地: 0"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/p1_life"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="ライフ : 10"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/p1_cost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="コスト : 10"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

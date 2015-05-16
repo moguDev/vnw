@@ -1,0 +1,23 @@
+{
+    "CardType": "magic",
+    "ID": 20003,
+    "Name": "ëêä†ÇË",
+    "COST": 2,
+    "Range": "0000000000002000000000000",
+    "Effect": [
+        {
+            "scope": "player",
+            "execute": "immediate",
+            "process": [
+                {
+                    "do": "alterValue",
+                    "target": "opponent",
+                    "param": "weed",
+                    "val": "-2",
+                    "next": "-1"
+                }
+            ]
+        }
+    ],
+    "FT": ""
+}

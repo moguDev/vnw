@@ -1,0 +1,29 @@
+{
+    "CardType": "magic",
+    "ID": 20008,
+    "Name": "ínêk",
+    "COST": 0,
+    "Range": "0000000000002000000000000",
+    "Effect": [
+        {
+            "scope": "board",
+            "execute": "immediate",
+            "process": [
+                {
+                    "do": "check",
+                    "param": "CardType",
+                    "val": "monster",
+                    "trueNext": "1",
+                    "falseNext": "-1"
+                },
+                {
+                    "do": "alterValue",
+                    "param": "hp",
+                    "val": "-1",
+                    "next": "-1"
+                }
+            ]
+        }
+    ],
+    "FT": ""
+}

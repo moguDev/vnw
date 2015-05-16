@@ -1,0 +1,68 @@
+{
+    "CardType": "magic",
+    "ID": 20012,
+    "Name": "•ª‰ð",
+    "COST": 0,
+    "Range": "0000000100002000000000000",
+    "Effect": [
+        {
+            "scope": "range",
+            "execute": "immediate",
+            "process": [
+                {
+                    "do": "check",
+                    "param": "CardType",
+                    "val": "monster",
+                    "trueNext": "1",
+                    "falseNext": "-1"
+                },
+                {
+                    "do": "destroy",
+                    "next": "2"
+                },
+                {
+                    "do": "check",
+                    "param": "controllable",
+                    "val": "true",
+                    "trueNext": "3",
+                    "falseNext": "4"
+                },
+                {
+                    "do": "store",
+                    "operation": "add",
+                    "index": "0",
+                    "value": "cost",
+                    "next": "-1"
+                },
+                {
+                    "do": "store",
+                    "operation": "add",
+                    "index": "1",
+                    "value": "cost",
+                    "next": "-1"
+                }
+            ]
+        },
+        {
+            "scope": "player",
+            "execute": "immediate",
+            "process": [
+                {
+                    "do": "alterIndex",
+                    "target": "me",
+                    "param": "weed",
+                    "index": "0",
+                    "next": "1"
+                },
+                {
+                    "do": "alterIndex",
+                    "target": "opponent",
+                    "param": "weed",
+                    "index": "1",
+                    "next": "-1"
+                }
+            ]
+        }
+    ],
+    "FT": ""
+}

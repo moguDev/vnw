@@ -1,0 +1,29 @@
+{
+    "CardType": "magic",
+    "ID": 20007,
+    "Name": "F5アタック",
+    "COST": 2,
+    "Range": "0000000000002000010000000",
+    "Effect": [
+        {
+            "scope": "range",
+            "execute": "immediate",
+            "process": [
+                {
+                    "do": "check",
+                    "param": "CardType",
+                    "val": "monster",
+                    "trueNext": "1",
+                    "falseNext": "-1"
+                },
+                {
+                    "do": "alterValue",
+                    "param": "movRange",
+                    "val": "0000000000002000000000000",
+                    "next": "-1"
+                }
+            ]
+        }
+    ],
+    "FT": ""
+}

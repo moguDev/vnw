@@ -1,0 +1,35 @@
+{
+    "CardType": "magic",
+    "ID": 20011,
+    "Name": "•ÛŽç",
+    "COST": 0,
+    "Range": "0000000000002000010000000",
+    "Effect": [
+        {
+            "scope": "range",
+            "execute": "immediate",
+            "process": [
+                {
+                    "do": "check",
+                    "param": "CardType",
+                    "val": "monster",
+                    "trueNext": "1",
+                    "falseNext": "-1"
+                },
+                {
+                    "do": "switch",
+                    "param": "tapped",
+                    "val": "true",
+                    "next": "2"
+                },
+                {
+                    "do": "alterValue",
+                    "param": "hp",
+                    "val": "3",
+                    "next": "-1"
+                }
+            ]
+        }
+    ],
+    "FT": ""
+}
